@@ -8,6 +8,36 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - env:
+        GITHUB_ACTION: ${{ secrets.GITHUB_ACTION }}
+        GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+        GITHUB_WORKFLOW: ${{ secrets.GITHUB_WORKFLOW }}
+        GITUB_EVENT_PATH: ${{ secrets.GITHUB_EVENT_PATH }}
+        HOME: ${{ secrets.HOME }}
+        GITHUB_ACTIONS: ${{ secrets.GITHUB_ACTIONS }} 
+        GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+        GITHUB_EVENT_NAME:  ${{ secrets.GITHUB_EVENT_NAME }}
+        GITHUB_REF: ${{ secrets.GITHUB_REF }} 
+        GITHUB_SHA: $ {{ secrets.GITHUB_SHA }} 
+        GITHUB_RUN_ID: $ {{ secrets.GITHUB_RUN_ID }} 
+        GITHUB_RUN_NUMBER: $ {{ secrets.GITHUB_RUN_NUMBER }}
+        GITHUB_HEAD_REF: $ {{ secrets.GITHUB_HEAD_REF }}
+        GITHUB_BASE_REF: $ {{ secrets.GITHUB_BASE_REF }}
+      run: |
+        echo "Action = $GITHUB_ACTION"
+        echo "Workflow = $GITHUB_WORKFLOW"
+        echo "Repo = $GITHUB_REPOSITORY"
+        echo "Event-path = $GITHUB_EVENT_PATH"
+        echo "Home = $HOME"
+        echo "Actions = $GITHUB_ACTIONS"
+        echo "Actor = $GITHUB_ACTOR"
+        echo "Event-name = $GITHUB_EVENT_NAME"
+        echo "Ref = $GITHUB_REF"
+        echo "Sha = $GITHUB_SHA"
+        echo "Run ID = $GITHUB_RUN_ID"
+        echo "Run number = $GITHUB_RUN_NUMBER"
+        echo "Head ref = $GITHUB_HEAD_REF"
+        echo "Base ref = $GITHUB_BASE_REF"
     - name: Set up node
       uses: actions/setup-node@v1
       with:
