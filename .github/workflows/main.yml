@@ -15,7 +15,9 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
-    - run: bash <(curl -s https://codecov.io/bash) -f coverage/clover.xml
+    - uses: codecov/codecov-action@6ec347819ddb4ed30afadc8f861a626e7551cad8
+      with:
+        name: "this is a test"
       
       
       
