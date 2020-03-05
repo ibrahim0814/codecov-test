@@ -15,7 +15,7 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@6ec347819ddb4ed30afadc8f861a626e7551cad8
       with:
         name: "this is a test"
       
